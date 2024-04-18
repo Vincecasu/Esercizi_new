@@ -14,3 +14,12 @@ print(message)
 
 #2-4. Name Cases: Use a variable to represent a person’s name, and then 
 #print that person’s name in lowercase, uppercase, and title case.
+
+name_lower: str = name.lower()
+
+name_upper: str = name.upper()
+
+name_title: str = name.title()
+
+print(f"{name_lower}, {name_upper}, {name_title}")
+
