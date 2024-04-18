@@ -8,6 +8,9 @@ print("Hello World!")
 
 name : str = "Mario"
 
-message : str = (f"Ciao {name}, ti va di imparare un pò di python insieme")
+message : str = (f"Ciao {name}, ti va di imparare un pò di python insieme?")
 
 print(message)
+
+#2-4. Name Cases: Use a variable to represent a person’s name, and then 
+#print that person’s name in lowercase, uppercase, and title case.
