@@ -37,8 +37,8 @@ def counter (s: str) -> list[int]:
 # 2) il secondo elemento della lista contiene il numero di parole nella stringa
 # 3) il terzo elemento della lista contiene il numero di parole distinte nella stringa
 # 49 il quarto elemento della lista contiene il numero di frasi nella stringa
+  
   s = s.lower
-
   lista: list[int] = []
 
 #Quanti caratteri ha la stringa:
@@ -48,7 +48,64 @@ def counter (s: str) -> list[int]:
   lista[1] = len(s.split())
 
   #Quante parole distinte ha la stringa
+  parole = s.split()
+  parole_distinte = set(parole)
+  lista.append(len(parole_distinte))
+  #terzo = len(parole_distinte)
+  #quante frasi ha la stinga
+  lista.append(len(s.split(".")))-1
+  #quarto = len(s.count("."))
+  #lista[-1] = s.count(".")
+  #s = "ciao bello.come stai."
+  #s.split(".") -> ["ciao bello","come stai",]
+  return lista
 
+
+
+
+
+#Da finire
+
+
+
+
+
+#Adesso faccio un'altra funzione che conta il numero di occorrenza delle parole
+#ad esempio se la stringa è "ciao come stai. tutto bene . ciao io sto bene"
+#ad esempio {"ciao": 2,"come":1,"stai":1,"tutto":2,"bene":2,"io":1,"sto":1}
+
+def word_count(s: str) -> dict [str,int]:
+    s: str = s.replace(".","").replace(",","").replace(";","").replace("!","")
+    words : list[str] = s.split()
+    
+    d:dict [str,int] = dict()
+    for word in words :
+        if word not in d :
+            d[word] = 1
+        else:
+            d[word] = d[word]+1
+
+# Adesso filtra le parole che compaiono > 1 volta
+    d_filtered: dict [str,int] = dict()
+    for key , val in d.items():
+        if val > 1 :
+            d_filtered[key] = val
+    return d_filtered
+
+def is_palindrome(s: str) -> bool:
+
+#Restituisce True se s è palindroma; altrimenti restituisce False
+#Ad esempio "Amo Roma" è una stringa palindroma
+# "Ciao come stai?" non è una stringa palindroma
+
+  s: str = s.lower().replace(" ","")
+
+  i: int = 0
+  while i < len(s):
+      j = len(s) - (i + 1)
+      
+
+ 
 
 
 
