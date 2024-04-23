@@ -19,10 +19,23 @@ def substract (a: float,b: float):
 diff = substract(5, 3)
 print(f"La differenza è {diff}")
 
-#Funzione che prende in input una lista di valori reali e restituisce la mediana 
-#di questa lista
+#Questa funzione prende in input una lista di valori reali e restituisce 
+#la mediana di questa lista.
+'''
+Ad esempio :
+l = [2,9,0,-1,25,2,4,3] (lunghezza pari)
+l ordinata: -1 0 2 2 3 4 9 25
+mediana = (2 + 3)/ 2 = 2.5
 
-def median (l: list[float]):
+l = [2,9,0,-1,25,2,4] (lunghezza dispari)
+l ordinata: -1 0 2 2 4 9 25
+mediana = 2 perchè 2 è l'elemento centrale
+
+'''
+
+
+def median (l: list[float]) -> float:
+
     l.sort()
     if len(l) % 2 == 1:
         mid = len(l) // 2
