@@ -48,7 +48,7 @@ for num in range(1,21):
 
 '''
 numeri:list = []
-for n in range(1,1000001):
+for n in range(1,1001):
     numeri.append(n)
 print(numeri)
 
@@ -63,3 +63,61 @@ massimo: int = max(numeri)
 print(massimo)
 somma: int = sum(numeri)
 print(somma)
+
+'''
+4-6. Odd Numbers: Use the third argument of the range() function 
+to make a list of the odd numbers from 1 to 20. Use a for loop to print 
+each number.
+
+'''
+num_dispari: list = []
+for dispari in range(1,21,2):
+    num_dispari.append(dispari)
+print(num_dispari)
+
+'''
+4-7. Threes: Make a list of the multiples of 3, from 3 to 30. 
+Use a for loop to print the numbers in your list.
+'''
+l1: list = []
+for threes in range(3,31,3):
+    l1.append(threes)
+print(l1)
+
+#Oppure :
+
+multi_tre = list(range(3, 31, 3))
+
+for multi in multi_tre:
+    print(multi)
+
+'''
+4-8. Cubes: A number raised to the third power is called a cube. 
+For example, the cube of 2 is written as 2**3 in Python. Make a list of the
+first 10 cubes (that is, the cube of each integer from 1 through 10), 
+and use a for loop to print out the value of each cube.
+'''
+cubi: list = []
+for cubo in range(1,11):
+    cubi.append(cubo**3)
+print(cubi)
+
+'''
+4-9. Cube Comprehension: Use a list comprehension to generate a list of 
+the first 10 cubes.
+'''
+cubes = [x ** 3 for x in range(1, 11)]
+
+print(cubes)
+
+'''
+4-10. Slices: Using one of the programs you wrote in this chapter, 
+add several lines to the end of the program that do the following:
+• Print the message The first three items in the list are:. 
+Then use a slice to print the first three items from that program’s list.
+• Print the message Three items from the middle of the list are:. 
+Then use a slice to print three items from the middle of the list.
+• Print the message The last three items in the list are:. 
+Then use a slice to print the last three items in the list.
+'''
+
