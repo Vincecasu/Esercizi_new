@@ -4,8 +4,8 @@ def subtract_all(x: list[float],y: float) -> list[float]:
     # restituisce [-4,-3,-2,-1,0]
     res: list[float] = []
     for i in x:
-        c = i-y
-        res.append(c)
+        diff: float = i - y
+        res.append(diff)
     return res
 
 
