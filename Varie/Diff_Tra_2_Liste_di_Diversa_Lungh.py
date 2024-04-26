@@ -10,7 +10,7 @@ def subtract_lists(x: list[float],y: list[float]) -> list[float]:
           new_list.append(diff)
     return new_list
 
-mylist: list[float]=[1,2,3,4,5]
+mylist: list[float]=[1,2,3,4,5,6]
 y : list[float] = [2,3,4,5,6]
 result = subtract_lists(mylist,y)
 
