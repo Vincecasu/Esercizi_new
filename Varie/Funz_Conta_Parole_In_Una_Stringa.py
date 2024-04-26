@@ -22,14 +22,16 @@ def word_count(s: str) -> dict [str,int]:
 
 # Adesso filtra le parole che compaiono > 1 volta.
 
-    d_filtered: dict [str,int] = dict()
-    for key in d:
-        if d[key] > 1:
-            d_filtered[key] = d[key]
+d_filtered: dict [str,int] = dict()
+for key in d:
+    if d[key] > 1:
+      d_filtered[key] = d[key]
     return d_filtered
-#Oppure posso fare :
-    d_filtered: dict [str,int] = dict()
-    for k , v in d.items:
-        if val > 1 :
-            d_filtered[key] = val
+
+            #Oppure posso fare :
+
+d_filtered: dict [str,int] = dict()
+for k , v in d.items:
+    if val > 1 :
+        d_filtered[key] = val
     return d_filtered
