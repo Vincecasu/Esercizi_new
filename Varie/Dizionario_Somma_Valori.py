@@ -1,5 +1,5 @@
 '''
-Questa funzione prende in output un dizionario
+Questa funzione prende in input un dizionario
 (e.s. d = {"ciao":2,"hello":3}) e restituisce
 un nuovo dizionario fatto così:
 d1 = {"ciao":2/5,"hello":3/5} dove 5 è la somma dei valori
