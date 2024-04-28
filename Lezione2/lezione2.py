@@ -143,8 +143,106 @@ for last in range(len(guest_list)):
 del guest_list [:]
 print(guest_list) 
 
+#3-8. Seeing the World: Think of at least five places in the world you’d like 
+#to visit.
+#Store the locations in a list. Make sure the list is not in alphabetical order.
+#Print your list in its original order. Don’t worry about printing the list 
+#neatly; just print it as a raw Python list.
+#Use sorted() to print your list in alphabetical order without modifying the 
+#actual list.
+#Show that your list is still in its original order by printing it.
+#Use sorted() to print your list in reverse-alphabetical order without 
+#changing the order of the original list.
+#Show that your list is still in its original order by printing it again.
+#Use reverse()  to change the order of your list. Print the list to show that 
+#its order has changed.
+#Use reverse() to change the order of your list again. Print the list to show 
+#it’s back to its original order.
+#Use sort() to change your list so it’s stored in alphabetical order. 
+#Print the list to show that its order has been changed.
+#Use sort() to change your list so it’s stored in reverse-alphabetical order.
+#Print the list to show that its order has changed.
+
+places: list = ["Europa","Asia","Africa","Stati Uniti","Oceania"]
+print(places)
+places_ord: list = sorted(places)
+print(places_ord)
+print(places)
+places_ord: list = sorted(places,reverse=True)
+print(places_ord)
+print(places)
+places.reverse()
+print(places)
+places.reverse()
+print(places)
+places.sort()
+print(places)
+places.sort(reverse=True)
+print(places)
+
+#3-9. Dinner Guests: Working with one of the programs from Exercises 3, 
+#use len() to print a message indicating the number of people you’re inviting 
+#to dinner.
+print(f"Le persone invitate a cena saranno {len(guest_list)}")
+
+#3-10. Every Function: Think of things you could store in a list. 
+#For example, you could make a list of mountains, rivers, countries, cities, 
+#languages, or anything else you’d like. Write a program that creates a list 
+#containing these items and then uses each function introduced in this chapter 
+#at least once.
+
+città_varie: list[str] = ["Milano","Roma","Napoli"]
+def every_function(l: list[str]) -> list[str]:
+  for città in città_varie:
+   print(f"{città} è una grande città.")
+
+every_function(città_varie)
+  
+
+# Crea una lista contenente vari elementi
+cose_lista = ["Monte Everest", "Rio delle Amazzoni", "Francia", "New York City", "Inglese"]
+
+# Appendi: Aggiungi un elemento alla fine della lista
+cose_lista.append("Nilo")
+
+# Inserisci: Inserisci un elemento in una posizione specifica
+cose_lista.insert(2, "Giappone")
+
+# Rimuovi: Rimuovi la prima occorrenza di un elemento dalla lista
+cose_lista.remove("New York City")
+
+# Pop: Rimuovi e restituisci l'elemento all'indice specificato
+elemento_rimosso = cose_lista.pop(0)
+
+# Indice: Restituisci l'indice della prima occorrenza di un elemento
+indice = cose_lista.index("Francia")
+
+# Conta: Restituisci il numero di occorrenze di un elemento
+conteggio = cose_lista.count("Francia")
+
+# Ordina: Ordina gli elementi nella lista
+cose_lista.sort()
+
+# Inverti: Inverti l'ordine degli elementi nella lista
+cose_lista.reverse()
+
+# Estendi: Aggiungi gli elementi di un'altra lista alla fine della lista corrente
+cose_aggiuntive = ["Cina", "Rio de Janeiro"]
+cose_lista.extend(cose_aggiuntive)
+
+# Cancella: Rimuovi tutti gli elementi dalla lista
+cose_lista.clear()
+
+# Stampare la lista e altre informazioni
+print("Lista dopo le operazioni:", cose_lista)
+print("Elemento rimosso:", elemento_rimosso)
+print("Indice di 'Francia':", indice)
+print("Conteggio di 'Francia':", conteggio)
 
 
+
+
+  
 
 
 
