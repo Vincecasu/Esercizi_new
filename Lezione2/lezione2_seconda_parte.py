@@ -134,6 +134,95 @@ for animale in pets:
     print("Nome del Proprietario:", animale["Proprietario"])
     print()  # Inserisce una riga vuota tra le informazioni di ciascun animale
 
+#6-9. Favorite Places: Make a dictionary called favorite_places. 
+#Think of three names to use as keys in the dictionary, and store one to three 
+#favorite places for each person. To make this exercise a bit more interesting, 
+#ask some friends to name a few of their favorite places. 
+#Loop through the dictionary, and print each person’s name and 
+#their favorite places.
+
+favorite_places: dict[str,str] = {
+    "John": ["Los Angeles","New York","Boston"],
+    "Alice": ["Chigaco","Roma","Sydney"],
+    "Bob": ["Londra","Seattle","Parigi"]
+}
+for nome in favorite_places:
+    print(f"I luoghi preferiti da {nome} sono:{favorite_places[nome]}")
+
+#Oppure bello anche cosi:
+for nomi , posti in favorite_places.items():
+    print(f"I luoghi preferiti da {nomi} sono:")
+    for luogo in posti:
+        print("-", luogo)
+    print()
+
+#6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person 
+#can have more than one favorite number. Then print each person’s name 
+#along with their favorite numbers.
+
+favorite_numbers2: dict[str,int] = {
+    "Anna":[1,2,3],
+    "Gianna":[4,5,6],
+    "Maria":[7,8,9],
+    "Laura":[10,11,12],
+    "Paola":[5,10,15]
+}
+for num in favorite_numbers2:
+    print(f"I numeri preferi ti da {num} sono: {favorite_numbers2[num]}")
+
+# Dictionary to store people's favorite numbers
+favorite_numbers_3 = {
+    "Alice": [7, 11, 15],
+    "Bob": [3, 8],
+    "Charlie": [42, 17, 23],
+    "David": [5]
+}
+
+# Print each person's name along with their favorite numbers
+for person, numbers in favorite_numbers_3.items():
+    print(f"{person}'s favorite numbers are: {', '.join(map(str, numbers))}")
+
+
+#6-11. Cities: Make a dictionary called cities. Use the names of three cities 
+#as keys in your dictionary. Create a dictionary of information about each city 
+#and include the country that the city is in, its approximate population, 
+#and one fact about that city. The keys for each city’s dictionary should be 
+#something like country, population, and fact. Print the name of each city 
+#and all of the information you have stored about it.
+
+# Dizionario per memorizzare informazioni sulle città
+cities = {
+    "Parigi": {
+        "paese": "Francia",
+        "popolazione": 2141000,
+        "dato_interessante": "Parigi è conosciuta come la 'Città della Luce' (La Ville Lumière) perché è stata una delle prime città al mondo ad avere l'illuminazione stradale."
+    },
+    "Tokyo": {
+        "paese": "Giappone",
+        "popolazione": 13960000,
+        "dato_interessante": "Tokyo è l'area metropolitana più grande del mondo, con oltre 37 milioni di abitanti."
+    },
+    "New York": {
+        "paese": "Stati Uniti",
+        "popolazione": 8337000,
+        "dato_interessante": "La città di New York è composta da cinque distretti: Manhattan, Brooklyn, Queens, Bronx e Staten Island."
+    }
+}
+
+# Stampa il nome di ogni città e tutte le informazioni memorizzate su di essa
+for città, info in cities.items():
+    print(f"{città}:")
+    print(f"  Paese: {info['paese']}")
+    print(f"  Popolazione: {info['popolazione']}")
+    print(f"  Dato interessante: {info['dato_interessante']}")
+    print()  # Inserisce una riga vuota tra le informazioni di ciascuna città
+
+
+
+
+
+
+
 
 
 
