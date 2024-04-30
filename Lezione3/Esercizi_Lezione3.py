@@ -464,12 +464,16 @@ current_users containing the lowercase versions of all existing users.)
 
 current_users: list[str] = ["Gino","Nino","Pino","Lino","Teo"]
 new_users: list[str] = ["gino","Edo","nino","Manu","pino"]
+
 current_users_low: list[str] = []
 new_users_low : list[str] = []
+
 for user in current_users:
     current_users_low.append(user.lower())
+
 for user in new_users:
     new_users_low.append(user.lower())
+    
 for user in new_users_low:
     if user in current_users_low:
         print(f"Spiacenti {user},la tua username non è disponibile.")
