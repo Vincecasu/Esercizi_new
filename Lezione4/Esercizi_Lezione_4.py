@@ -42,7 +42,7 @@ def make_shirt(size="L",text="I love Python"):
     print(f"Sulla t-shirt taglia {size} c'è scritto '{text}'.")
 make_shirt()
 make_shirt(size="M")
-make_shirt(size="S",text="Coca-Cola~")
+make_shirt(size="S",text="~Coca-Cola")
 
 '''
 8-5. Cities: Write a function called describe_city() that accepts the name 
@@ -133,4 +133,190 @@ while True:
 
     album_info = make_album(artist, title)
     print(album_info)
-    
+
+'''
+8-9. Messages: Make a list containing a series of short text messages. 
+Pass the list to a function called show_messages(), which prints each text 
+message.
+'''
+def show_messages():
+    messaggi: list[str] = ["Ciao, come stai?","Fin qui tutto bene?",\
+                           "L'importante è arrivare come si deve."]
+    print(f"{messaggi[0]}")
+    print(f"{messaggi[1]}")
+    print(f"{messaggi[2]}")
+show_messages()
+
+#Oppure :
+
+def show_messages(messages):
+    """Prints each text message in the list."""
+    for message in messages:
+        print(message)
+
+# Define a list of text messages
+text_messages = [
+    "Hello!",
+    "How are you?",
+    "I'm fine, thank you.",
+    "Have a great day!"
+]
+
+# Call the show_messages() function with the list of messages
+show_messages(text_messages)
+
+'''
+8-10. Sending Messages: Start with a copy of your program from Exercise 8-9. 
+Write a function called send_messages() that prints each text message and 
+moves each message to a new list called sent_messages as it’s printed. 
+After calling the function, print both of your lists to make sure the messages 
+were moved correctly.
+'''
+def show_messages(messages):
+    """Prints each text message in the list."""
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    """Prints each text message, moves it to sent_messages, and prints sent_messages."""
+    while messages:
+        message = messages.pop(0)
+        print("Sending message:", message)
+        sent_messages.append(message)
+
+# Define a list of text messages
+text_messages = [
+    "Hello!",
+    "How are you?",
+    "I'm fine, thank you.",
+    "Have a great day!"
+]
+
+# Create an empty list to store sent messages
+sent_messages = []
+
+# Call the send_messages() function to send and move messages
+send_messages(text_messages, sent_messages)
+
+# Print both lists to make sure the messages were moved correctly
+print("\nOriginal messages:")
+show_messages(text_messages)
+print("\nSent messages:")
+show_messages(sent_messages)
+
+'''
+Archived Messages: Start with your work from Exercise 8-10. Call the function 
+send_messages() with a copy of the list of messages. After calling the function, 
+print both of your lists to show that the original list has retained 
+its messages.
+'''
+def show_messages(messages):
+    """Prints each text message in the list."""
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    """Prints each text message, moves it to sent_messages, and prints sent_messages."""
+    while messages:
+        message = messages.pop(0)
+        print("Sending message:", message)
+        sent_messages.append(message)
+
+# Define a list of text messages
+text_messages = [
+    "Hello!",
+    "How are you?",
+    "I'm fine, thank you.",
+    "Have a great day!"
+]
+
+# Create an empty list to store sent messages
+sent_messages = []
+
+# Call the send_messages() function with a copy of the text_messages list
+send_messages(text_messages[:], sent_messages)
+
+# Print both lists to show that the original list has retained its messages
+print("\nOriginal messages:")
+show_messages(text_messages)
+print("\nSent messages:")
+show_messages(sent_messages)
+
+'''
+8-12. Sandwiches: Write a function that accepts a list of items a person wants
+ on a sandwich. The function should have one parameter that collects 
+ as many items as the function call provides, and it should print a summary 
+ of the sandwich that’s being ordered. Call the function three times, 
+ using a different number of arguments each time.
+'''
+def make_sandwich(*items):
+    print("Fare un panino con i seguenti ingredienti:")
+    for item in items:
+        print("-" + item)
+
+make_sandwich("prosciutto","formaggio","pomodoro")
+print()
+make_sandwich("porchetta")
+print()
+make_sandwich("pomodoro","mozzarella","basilico")
+
+'''
+8-13. User Profile:  Build a profile of yourself by calling build_profile(), 
+using your first and last names and three other key-value pairs that 
+describe you. All the values must be passed to the function as parameters. 
+The function then must return a string such as "Eric Crow, age 45, hair brown,
+weight 67".
+'''
+def build_profile(nome, cognome, età, peso, altezza):
+    """Builds a profile of a person."""
+    profilo = f"{nome} {cognome}, età {età}, peso {peso}, altezza {altezza}"
+    return profilo
+
+# Call the build_profile() function with your information
+mio_profilo = build_profile("Vincenzo", "Casuccio", 46, 95, "1,75")
+
+# Print the profile
+print(mio_profilo)
+
+#Oppure avrei potuto costruire un dizionario:
+
+def build_profile(first_name, last_name, age, hair_color, weight):
+    """Builds a profile of a person."""
+    profile = {
+        "first_name": first_name,
+        "last_name": last_name,
+        "age": age,
+        "hair_color": hair_color,
+        "weight": weight
+    }
+    return profile
+
+# Call the build_profile() function with your information
+my_profile = build_profile("John", "Doe", 30, "brown", 75)
+
+# Print the profile
+print(my_profile)
+
+'''
+8-14. Cars: Write a function that stores information about a car in a dictionary.
+ The function should always receive a manufacturer and a model name. 
+ It should then accept an arbitrary number of keyword arguments. 
+ Call the function with the required information and two other name-value pairs,
+such as a color or an optional feature. Your function should work for a call 
+like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True)
+Print the dictionary that’s returned to make sure all the information 
+was stored correctly. 
+'''
+def make_car(marca,modello,colore,versione,optional):
+    info_car: dict[str,str] = {
+        "marca": marca,
+        "modello": modello,
+        "colore": colore,
+        "verione": versione,
+        "optional": optional 
+        }
+    return info_car
+
+my_car = make_car("Audi","Q8","Grigio Scuro","Rs","Full Optional")
+print(my_car)
+        
