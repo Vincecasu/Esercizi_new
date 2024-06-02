@@ -8,10 +8,10 @@ Make a method called describe_restaurant() that prints these two pieces of
 methods.
 '''
 class Restaurant:
-    def __init__(self,name,cuisine, valori_recensini=5) -> None:
+    def __init__(self,name,cuisine, valore_recensioni=5) -> None:
         self.restaurant_name = name
         self.cuisine_type = cuisine
-        self.recensione = valori_recensini
+        self.recensione = valore_recensioni
 
     def describe_restaurant(self):
         print(f"Name: {self.restaurant_name}\nCuisine: {self.cuisine_type}")
@@ -30,8 +30,8 @@ restaurant.open_restaurant()
 Create three different instances from the class, and call describe_restaurant() 
 for each instance.
 '''
-ristorante_1 = Restaurant("La Pergola","Internazionale")
-ristorante_2 = Restaurant("Da Ciro","Carne")
+ristorante_1 = Restaurant("La Pergola","Stellato")
+ristorante_2 = Restaurant("Da Ciro","Pizza")
 ristorante_3 = Restaurant("Da Antonio","Vegan")
 ristorante_1.describe_restaurant()
 ristorante_2.describe_restaurant()

@@ -12,7 +12,36 @@ class User:
         self.nome = nome
         self.cognome = cognome
         self.residenza = residenza
+
+    def describe_user(self):
+        print(f"Informazioni utente: {self.nome} {self.cognome}\
+ {self.residenza}")
+
     
     def greet_user(self):
-        print(f"Ciao {self.nome} {self.cognome} felice di vederti.")
+        print(f"Ciao {self.nome} {self.cognome},felice di vederti.")
+    
+vincenzo = User("Vincenzo","Casuccio","Roma")
+pietro = User("Pietro","Verdi","Venezia")
+alberto = User("Alberto","Bianchi","Milano")
+vincenzo.describe_user()
+vincenzo.greet_user()
+
+users = [vincenzo,pietro,alberto]
+for user in users:
+    user.describe_user()
+    user.greet_user()
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
 

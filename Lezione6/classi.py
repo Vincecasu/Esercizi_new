@@ -11,7 +11,7 @@ bob = Person("Bob M.", 36)
 print(bob.age)
 
 if bob.age == alice.age:
-  print(f"Bob e Alice hanno la stessa età")
+  print(f"Bob e Alice hanno la stessa età.")
 elif bob.age > alice.age:
   print(bob.age)
 else:
