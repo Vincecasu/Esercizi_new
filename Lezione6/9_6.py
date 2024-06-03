@@ -24,7 +24,7 @@ class Restaurant:
 
     def increment_number_served(self, additional_customers):
         self.number_served += additional_customers
-        
+
 
 class IceCreamStand(Restaurant):
     def __init__(self, name, cuisine_type, flavors):

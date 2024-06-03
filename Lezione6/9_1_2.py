@@ -16,14 +16,14 @@ class Restaurant:
     def describe_restaurant(self):
         print(f"Name: {self.restaurant_name}\nCuisine: {self.cuisine_type}")
     
-    def open_restaurant(self):
+    def open_restaurant():
         print(f"The Restaurant is open")
 
 restaurant = Restaurant("Al Poetto","Pesce",9)
 print(restaurant.cuisine_type,restaurant.restaurant_name)
 restaurant.describe_restaurant()
 print(restaurant.recensione)
-restaurant.open_restaurant()
+Restaurant.open_restaurant()
 
 '''
 9-2. Three Restaurants: Start with your class from Exercise 9-1. 
@@ -36,3 +36,4 @@ ristorante_3 = Restaurant("Da Antonio","Vegan")
 ristorante_1.describe_restaurant()
 ristorante_2.describe_restaurant()
 ristorante_3.describe_restaurant()
+Restaurant.open_restaurant()

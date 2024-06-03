@@ -14,8 +14,8 @@ class User:
         self.residenza = residenza
 
     def describe_user(self):
-        print(f"Informazioni utente: {self.nome} {self.cognome}\
- {self.residenza}")
+        print(f"Informazioni utente: {self.nome} {self.cognome} "+\
+        f"{self.residenza}")
 
     
     def greet_user(self):
