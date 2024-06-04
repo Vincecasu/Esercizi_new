@@ -10,10 +10,9 @@ again to make sure it was reset to 0.
 '''
 class User:
 
-    def __init__(self,nome,cognome,residenza) -> None:
+    def __init__(self,nome,cognome) -> None:
         self.nome = nome
         self.cognome = cognome
-        self.residenza = residenza
         self.login_attempts = 0
 
     def increment_login_attempts(self):
@@ -22,7 +21,7 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
-vincenzo = User("Vincenzo","Casuccio","Roma")
+vincenzo = User("Vincenzo","Casuccio")
 vincenzo.increment_login_attempts()
 vincenzo.increment_login_attempts()
 vincenzo.increment_login_attempts()
