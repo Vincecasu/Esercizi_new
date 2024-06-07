@@ -94,7 +94,8 @@ class Film(Media) :
 
 film_1 = Film("The Shawshank Redemption")
 
-lista_voti = [3,4,5,4,3,5,4,2,1,1]
+recensioni = [3,4,5,4,3,5,4,2,1,1]
+film_1.recensioni = recensioni
 print(film_1.recensione())
          
             
