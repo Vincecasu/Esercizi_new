@@ -72,25 +72,25 @@
 # print(next(prova_generatore))
 # print(next(prova_generatore))
 # print(next(prova_generatore))
-import time
-import random
+# import time
+# import random
 
-def funzione(id: int):
-    import time
-    import random
+# def funzione(id: int):
+#     import time
+#     import random
 
-    sleep_time:int = random.randint(1,10)
-    print(f"{id=} time {time.time()}")
-    time.sleep(sleep_time)
-    print(f"{id=} time {time.time()}")
+#     sleep_time:int = random.randint(1,10)
+#     print(f"{id=} time {time.time()}")
+#     time.sleep(sleep_time)
+#     print(f"{id=} time {time.time()}")
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    import threading
-    from concurrent.futures import ThreadPoolExecutor
+#     import threading
+#     from concurrent.futures import ThreadPoolExecutor
 
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        executor.map(funzione, range (10))
+#     with ThreadPoolExecutor(max_workers=10) as executor:
+#         executor.map(funzione, range (10))
 
     # lista_thread: list[threading.Thread,] = []
 
@@ -107,3 +107,20 @@ if __name__ == "__main__":
 
     #     t.join()
     #     print(f"Terminato!")
+
+def decoretor(func):
+    def wrapper():
+        print(f"Something is happening before the function is called.")
+
+        func()
+
+        print(f"Something ishappening after the funcion is called.")
+    
+    return wrapper
+
+def say_whee():
+    print(f"Whee!")
+
+say_whee = decoretor(say_whee)
+say_whee()
+    
