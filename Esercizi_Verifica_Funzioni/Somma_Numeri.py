@@ -6,6 +6,6 @@ restituisce il risultato.
 x = [1,1,1]
 y = [1,1,1]
 z = []
-for i in range(len(x),len(y)):
-    z = z.append(x[i]+y[i])
+for i in range(len(x)):
+    z.append(x[i]+y[i])
 print(z)

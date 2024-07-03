@@ -79,7 +79,7 @@
 #     import time
 #     import random
 
-#     sleep_time:int = random.randint(1,10)
+#     sleep_time: int = random.randint(1,10)
 #     print(f"{id=} time {time.time()}")
 #     time.sleep(sleep_time)
 #     print(f"{id=} time {time.time()}")
@@ -114,7 +114,7 @@ def decoretor(func):
 
         func()
 
-        print(f"Something ishappening after the funcion is called.")
+        print(f"Something is happening after the funcion is called.")
     
     return wrapper
 
