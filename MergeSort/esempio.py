@@ -61,11 +61,11 @@ if __name__ == "__main__":
     
     import random
     import time
-    import matplotlib.pyplot as plt
+    #import matplotlib.pyplot as plt 
     
     merge_sort_times: list[float] = []
     bubble_sort_times: list[float] = []
-    cases = [10, 50, 100, 250, 500, 1000, 1500, 2000, 5000, 10000, 20000]
+    cases = [10, 50, 100, 250, 500, 1000] #, 1500, 2000, 5000, 10000, 20000]
     for n in cases:
         
         list_input: list[int] = [random.randint(0, 100000) for _ in range(n)]
@@ -83,8 +83,8 @@ if __name__ == "__main__":
         bubble_sort_times.append(end-start)
         
     print(f"MERGE: {merge_sort_times}\nBUBBLE: {bubble_sort_times}")
-    plt.plot(cases, merge_sort_times, label="Merge")
-    plt.plot(cases, bubble_sort_times, label="Bubble")
-    plt.xscale("log")
-    plt.legend()
-    plt.show()
+    # plt.plot(cases, merge_sort_times, label="Merge")
+    # plt.plot(cases, bubble_sort_times, label="Bubble")
+    # plt.xscale("log")
+    # plt.legend()
+    # plt.show()
