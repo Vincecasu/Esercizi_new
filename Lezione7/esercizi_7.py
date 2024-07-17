@@ -314,7 +314,206 @@ lista_senza_duplicati = rimuovi_duplicati(lista)
 print(lista_senza_duplicati)
 # Output: [1, 2, 3, 4, 5, 'a', 'b', 'c']
 
+'''
+Scrivi una funzione che ruota gli elementi di una lista verso sinistra di un 
+numero specificato k di posizioni. La rotazione verso sinistra significa che 
+ciascun elemento della lista viene spostato a sinistra di una posizione e 
+l'elemento iniziale viene spostato alla fine della lista. Per la rotazione 
+utilizzare lo slicing e gestire il caso in cui il numero specificato di 
+posizioni sia maggiore della lunghezza della lista.
+'''
 
+def ruota_sinistra(lista, k):
+    if not lista:
+        return lista  # Verifica se la lista è vuota. Se lo è, ritorna 
+                      # la lista così com'è.
+
+    lunghezza = len(lista)
+    k = k % lunghezza  # Gestisce il caso in cui k sia maggiore della lunghezza della lista
+    
+    return lista[k:] + lista[:k]
+
+# Esempio di utilizzo
+lista = [1, 2, 3, 4, 5, 6, 7]
+k = 3
+lista_ruotata = ruota_sinistra(lista, k)
+print(lista_ruotata)
+# Output: [4, 5, 6, 7, 1, 2, 3]
+
+
+'''
+Scrivi una funzione che accetti tre parametri: username, password e status 
+di attivazione dell'account (attivo/non attivo). L'accesso è consentito solo 
+se il nome utente è "admin", la password corrisponde a "12345" e l'account è 
+attivo.
+'''
+
+def accesso(username, password, status):
+    # Verifica se il nome utente è "admin"
+    if username == "admin":
+        # Verifica se la password corrisponde a "12345"
+        if password == "12345":
+            # Verifica se lo status è "attivo"
+            if status == "attivo":
+                return "Accesso consentito"
+            else:
+                return "Account non attivo"
+        else:
+            return "Password errata"
+    else:
+        return "Nome utente errato"
+
+# Esempio di utilizzo
+username = "admin"
+password = "12345"
+status = "attivo"
+
+esito = accesso(username, password, status)
+print(esito)  # Output: Accesso consentito
+
+'''
+Scrivi una funzione che verifica se una combinazione di condizioni (A, B, e C) 
+è soddisfatta per procedere con un'operazione. L'operazione può procedere 
+solo se la condizione A è vera o se entrambe le condizioni B e C sono vere.
+'''
+def verifica_condizioni(A, B, C):
+    if A or (B and C):
+        return "Operazione consentita"
+    else:
+        return "Operazione non consentita"
+    
+'''
+Scrivi una funzione che riceve un numero e stampa un conto alla rovescia da 
+quel numero a zero.
+'''
+
+def conto_alla_rovescia(numero):
+    if numero < 0:
+        print("Il numero deve essere maggiore o uguale a zero.")
+        return
+    
+    for i in range(numero, -1, -1):
+        print(i)
+
+'''
+Scrivi una funzione che, dato un numero intero, determina se è un 
+"numero magico". Un numero magico è definito come un numero che contiene il 
+numero 7.'''
+
+def e_numero_magico(numero):
+    # Converte il numero in una stringa
+    numero_str = str(numero)
+    # Controlla se la stringa '7' è presente nella rappresentazione in stringa del numero
+    if '7' in numero_str:
+        return True
+    else:
+        return False
+
+'''
+Scrivi una funzione che verifica se in una stringa le parentesi '(' e ')' sono 
+bilanciate, cioè per ogni parentesi che apre c'è la corrispondente parentesi 
+che chiude.'''
+
+def parentesi_bilanciate(s):
+    # Inizializza un contatore per tenere traccia delle parentesi aperte
+    bilanciamento = 0
+    
+    # Itera attraverso ogni carattere nella stringa
+    for char in s:
+        # Incrementa il contatore per ogni parentesi aperta
+        if char == '(':
+            bilanciamento += 1
+        # Decrementa il contatore per ogni parentesi chiusa
+        elif char == ')':
+            bilanciamento -= 1
+            
+        # Se il contatore è negativo, significa che c'è una parentesi chiusa senza la corrispondente parentesi aperta
+        if bilanciamento < 0:
+            return False
+    
+    # Alla fine, il contatore dovrebbe essere zero se tutte le parentesi sono bilanciate
+    return bilanciamento == 0
+
+# Esempio di utilizzo
+print(parentesi_bilanciate("(())"))  # Output: True
+print(parentesi_bilanciate("((())"))  # Output: False
+print(parentesi_bilanciate(")("))  # Output: False
+print(parentesi_bilanciate("()()"))  # Output: True
+
+
+'''
+Scrivi una funzione che conta quante volte un elemento appare isolato in una 
+lista di numeri interi. Un elemento è considerato isolato se non è affiancato 
+da elementi uguali.'''
+
+
+def conta_isolati(lista):
+    if not lista:
+        return 0
+
+    count = 0
+    lunghezza = len(lista)
+
+    for i in range(lunghezza):
+        if (i == 0 or lista[i] != lista[i - 1]) and (i == lunghezza - 1 or lista[i] != lista[i + 1]):
+            count += 1
+
+    return count
+
+'''
+Scrivi una funzione chiamata create_contact() che accetta il nome e cognome, 
+e-mail (facoltativo) e numero di telefono (facoltativo). La funzione dovrebbe 
+restituire un dizionario con i dettagli del contatto.
+
+ESEMPIO: create_contact("Mario Rossi", email="mario.rossi@gmail.com", 
+telefono=69876543)
+
+OUTPUT: {'profile': 'Mario Rossi', 'email': 'mario.rossi@gmail.com', 
+'telefono': 788787}
+
+Scrivi una funzione chiamata update_contact() che accetta il dizionario creato, 
+il nome e cognome del contatto da aggiornare, e il dettaglio facoltativo 
+da aggiornare. Questa funzione dovrebbe aggiornare il dizionario del contatto.
+
+ESEMPIO: update_contact(dict, "Mario Rossi", telefono=123456789)
+
+OUTPUT: {'profile': 'Mario Rossi', 'email': 'mario.rossi@gmail.com', 
+'telefono': 123456789}'''
+
+def create_contact(nome_cognome, email=None, telefono=None):
+    contatto = {'profile': nome_cognome}
+    if email:
+        contatto['email'] = email
+    if telefono:
+        contatto['telefono'] = telefono
+    return contatto
+
+def update_contact(dizionario_contatto, nome_cognome, email=None, telefono=None):
+    if dizionario_contatto['profile'] == nome_cognome:
+        if email:
+            dizionario_contatto['email'] = email
+        if telefono:
+            dizionario_contatto['telefono'] = telefono
+    return dizionario_contatto
+
+# Esempi di utilizzo
+# Creazione di un contatto
+contatto = create_contact("Mario Rossi", email="mario.rossi@gmail.com", telefono=69876543)
+print(contatto)
+# Output: {'profile': 'Mario Rossi', 'email': 'mario.rossi@gmail.com', 'telefono': 69876543}
+
+# Aggiornamento di un contatto
+contatto = update_contact(contatto, "Mario Rossi", telefono=123456789)
+print(contatto)
+# Output: {'profile': 'Mario Rossi', 'email': 'mario.rossi@gmail.com', 'telefono': 123456789}
+
+
+
+
+
+
+
+        
 
 
 
