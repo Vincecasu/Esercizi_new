@@ -11,7 +11,7 @@ def subtract_lists(x: list[float],y: list[float]) -> list[float]:
     return new_list
 
 mylist: list[float]=[1,2,3,4,5,6]
-y : list[float] = [2,3,4,5,6]
+y : list[float] = [2,3,4,5,6,8,9]
 result = subtract_lists(mylist,y)
 
 print(f"La differenza secondo la posizione è {result}")

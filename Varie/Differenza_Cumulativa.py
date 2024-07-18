@@ -12,3 +12,6 @@ def diff_cum(l: list[float]) -> float:
     # che è una condizione che abbiamo escluso).
     #    diff -= i
     #return diff
+l = [1,2,3,4,5,6]
+result = diff_cum(l)
+print(result)

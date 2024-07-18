@@ -1,4 +1,4 @@
-def diff_cum(l: list[float], index: int) -> float:
+def diff_fulcro(l: list[float], index: int) -> float:
     # l = [1,2,3,4,5,6] 
     # devo restituire 3-1-2-4-5-6 = -qulacosa
     if -len(l) <=  index < len (l):  #index < len(l) and index >= -len(l)  
@@ -12,3 +12,4 @@ def diff_cum(l: list[float], index: int) -> float:
         return fulcro
     else:
         return 42
+

@@ -18,20 +18,20 @@ def word_count(s: str) -> dict [str,int]:
         else:
             d[word] = d[word]+1
 
-    return d
+        return d
 
 # Adesso filtra le parole che compaiono > 1 volta.
 
-    d_filtered: dict [str,int] = dict()
+    d_filtered:dict [str,int] = dict()
     for key in d:
         if d[key] > 1:
           d_filtered[key] = d[key]
-        return d_filtered
+    return d_filtered
 
                     #Oppure posso fare :
 
-    d_filtered: dict [str,int] = dict()
-    for k , v in d.items:
-        if val > 1 :
-            d_filtered[key] = val
-        return d_filtered
+    # d_filtered:dict [str,int] = dict()
+    # for key , val in d.items:
+    #     if val > 1 :
+    #          d_filtered[key] = val
+    # return d_filtered

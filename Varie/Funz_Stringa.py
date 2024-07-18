@@ -23,7 +23,7 @@ def counter (s: str) -> list[int]:
   parole_distinte = set(parole)
   lista.append(len(parole_distinte))
   
-  #quante frasi ha la stinga:
+  #quante frasi ha la stringa:
   lista.append(len(s.split("."))-1)
   #oppure:
   #lista.append(s.count("."))
@@ -31,3 +31,6 @@ def counter (s: str) -> list[int]:
   #s.split(".") -> ["ciao bello","come stai",""]
 
   return lista
+
+
+
