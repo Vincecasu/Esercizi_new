@@ -70,13 +70,43 @@ class School:
     
     def create_student(self, student_id: str):
         if student_id not in self.students:
-            self.students[student_id] = []
+            self.students[student_id] = Student(student_id)
         else:
             print(f"Lo studente con ID {student_id} esiste già.")
     
     def enroll_student(self, student_id: str, course: str):
         if student_id in self.students:
-            self.students.update[course]
+            self.students[student_id].enroll(course)
+        else:
+            print("Studente non trovato.")
+    
+    def get_student_courses(self, student_id: str) -> list:
+        if student_id in self.students:
+            return self.students[student_id].get_courses()
+        else:
+            return ["Studente non trovato."]
+
+    def get_student_list(self) -> list:
+        return list(self.students.keys())
+
+    def search_by_course(self, course: str) -> list:
+        student_ids = [student_id for student_id, student in self.students.items() if course in student.get_courses()]
+        if student_ids:
+            return student_ids
+        else:
+            return [f"Nessuno studente è iscritto al corso {course}."]
+    
+    # Oppure:
+    # def search_by_course(self, course: str) -> list:
+    #     student_ids = []
+    #     for student_id, student in self.students.items():
+    #         if course in student.get_courses():
+    #             student_ids.append(student_id)
+    #     if student_ids:
+    #         return student_ids
+    #     else:
+    #         return [f"Nessuno studente è iscritto al corso {course}."]
+
     
 
   
